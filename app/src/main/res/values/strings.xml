@@ -1,0 +1,10 @@
+<resources>
+  <string name="app_name">PolygonGraph Sample</string>
+
+  <string name="fit_cognitive">Cognitive fit</string>
+  <string name="fit_coping">Coping fit</string>
+  <string name="fit_behavioral">Behavioral fit</string>
+  <string name="fit_positive_psychology">Positive psychology fit</string>
+  <string name="fit_assertiveness">Assertiveness fit</string>
+  <string name="fit_goal_setting">Goal setting fit</string>
+</resources>

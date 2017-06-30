@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="colorPrimary">#3F51B5</color>
+  <color name="colorPrimaryDark">#303F9F</color>
+  <color name="colorAccent">#FF4081</color>
+
+  <color name="fillColor">#7fea4862</color>
+  <color name="fitCognitive">#f56c2e</color>
+  <color name="fitCoping">#f43651</color>
+  <color name="fitBehavioral">#b45d95</color>
+  <color name="fitPositivePsychology">#41e9f8</color>
+  <color name="fitAssertiveness">#bbe28a</color>
+  <color name="fitGoalSetting">#fab84a</color>
+</resources>
