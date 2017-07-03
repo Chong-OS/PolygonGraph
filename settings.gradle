@@ -1,1 +1,1 @@
-include ':app', ':polygongraph'
+include ':app', ':polygon-graph'

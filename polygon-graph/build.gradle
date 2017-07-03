@@ -39,7 +39,7 @@ ext {
 }
 
 dependencies {
-    compile "com.android.support:support-annotations:${rootProject.ext.supportLibVersion}"
+    implementation "com.android.support:support-annotations:${rootProject.ext.supportLibVersion}"
 }
 
 apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
