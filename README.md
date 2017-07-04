@@ -9,7 +9,7 @@ PolygonGraph widget for Android
 ## Requirements
 - Android SDK 14+
 
-## Integration
+## Usage
 ### Step 1:
 Add this dependency in your project's build.gradle file which is in your app folder
 ```Groovy
@@ -19,7 +19,7 @@ dependencies {
 ```
 add this to your dependencies.
 
-## Step 2:
+### Step 2:
 Add `PolygonGraphView` to your xml layout
 
 ```xml
@@ -46,32 +46,31 @@ Add `PolygonGraphView` to your xml layout
 
 </android.support.constraint.ConstraintLayout>
 ```
-## Step 3:
-### Initialize your view
-Kotlin
+### Step 3:
+#### Initialize your view
 ```kotlin
 val graph = findViewById(R.id.graph) as PolygonGraphView?
 ```
-### Pass the `ValueHolder` list to the `PolygonGraphView`
-Kotlin
+#### Pass the `ValueHolder` list to the `PolygonGraphView`
 ```kotlin
 val values = listOf(
-                PolygonGraphView.ValueHolder(getString(R.string.str1), 0.8f, ContextCompat.getColor(context, R.color.color1)),
-                PolygonGraphView.ValueHolder(getString(R.string.str2), 0.9f, ContextCompat.getColor(context, R.color.color2)),
+PolygonGraphView.ValueHolder(getString(R.string.str1), 0.8f, ContextCompat.getColor(context, R.color.color1)),
+                PolygonGraphView.ValueHolder("Label2", 0.9f, ContextCompat.getColor(context, R.color.color2)),
 		...
-           )
+	)
 
-        val adapter = object : PolygonGraphView.Adapter<PolygonGraphView.ValueHolder>() {
+val adapter = object : PolygonGraphView.Adapter<PolygonGraphView.ValueHolder>() {
 
-            override fun getSize(): Int = values.size
+	override fun getSize(): Int = values.size
 
-            override fun onCreateValueHolder(pos: Int): PolygonGraphView.ValueHolder = values[pos]
-        }
+        override fun onCreateValueHolder(pos: Int): PolygonGraphView.ValueHolder = values[pos]
+}
         
-        graph?.setAdapter(adapter)
+graph?.setAdapter(adapter)
+
 ```
 
-#### customize
+### Customize
 
 | Params  | Description |
 | ------------- | ------------- |
