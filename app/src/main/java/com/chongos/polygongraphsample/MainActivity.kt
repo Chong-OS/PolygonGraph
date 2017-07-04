@@ -24,22 +24,21 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupView() {
+        val values = listOf(
+                PolygonGraphView.ValueHolder(getString(R.string.fit_cognitive), 0.8f, R.color.fitCognitive.toIntColor()),
+                PolygonGraphView.ValueHolder(getString(R.string.fit_coping), 0.9f, R.color.fitCoping.toIntColor()),
+                PolygonGraphView.ValueHolder(getString(R.string.fit_behavioral), 0.9f, R.color.fitBehavioral.toIntColor()),
+                PolygonGraphView.ValueHolder(getString(R.string.fit_positive_psychology), 0.85f, R.color.fitPositivePsychology.toIntColor()),
+                PolygonGraphView.ValueHolder(getString(R.string.fit_assertiveness), 0.75f, R.color.fitAssertiveness.toIntColor()),
+                PolygonGraphView.ValueHolder(getString(R.string.fit_goal_setting), 0.5f, R.color.fitGoalSetting.toIntColor()))
+
         val adapter = object : PolygonGraphView.Adapter<PolygonGraphView.ValueHolder>() {
 
-            override fun getSize(): Int = 6
+            override fun getSize(): Int = values.size
 
-            override fun onCreateValueHolder(position: Int): PolygonGraphView.ValueHolder {
-                return when (position) {
-                    0 -> PolygonGraphView.ValueHolder(getString(R.string.fit_cognitive), 0.8f, R.color.fitCognitive.toIntColor())
-                    1 -> PolygonGraphView.ValueHolder(getString(R.string.fit_coping), 0.9f, R.color.fitCoping.toIntColor())
-                    2 -> PolygonGraphView.ValueHolder(getString(R.string.fit_behavioral), 0.9f, R.color.fitBehavioral.toIntColor())
-                    3 -> PolygonGraphView.ValueHolder(getString(R.string.fit_positive_psychology), 0.85f, R.color.fitPositivePsychology.toIntColor())
-                    4 -> PolygonGraphView.ValueHolder(getString(R.string.fit_assertiveness), 0.75f, R.color.fitAssertiveness.toIntColor())
-                    5 -> PolygonGraphView.ValueHolder(getString(R.string.fit_goal_setting), 0.5f, R.color.fitGoalSetting.toIntColor())
-                    else -> throw IndexOutOfBoundsException()
-                }
-            }
+            override fun onCreateValueHolder(pos: Int): PolygonGraphView.ValueHolder = values[pos]
         }
+
         graph?.setAdapter(adapter)
     }
 
