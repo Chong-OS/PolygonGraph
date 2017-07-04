@@ -1,23 +1,25 @@
 # PolygonGraph
-PolygonGraph widget for Android
-
 [![License](http://img.shields.io/badge/license-MIT-green.svg?style=flat)]()
 [![Download](https://api.bintray.com/packages/chongos/PolygonGraph/polygon-graph/images/download.svg) ](https://bintray.com/chongos/PolygonGraph/polygon-graph/_latestVersion)
 
+![ScreenShot](https://raw.githubusercontent.com/Chong-OS/PolygonGraph/master/screenshot.png)
+
+PolygonGraph widget for Android
+
 ## Requirements
-- Android SDK 16+
+- Android SDK 14+
 
-## Usage
-
-Add the dependency:
+## Integration
+### Step 1:
+Add this dependency in your project's build.gradle file which is in your app folder
 ```Groovy
 dependencies {
 	compile 'com.chongos:polygon-graph:1.0.0'
 }
 ```
-```
-## to use this library
+add this to your dependencies.
 
+## Step 2:
 Add `PolygonGraphView` to your xml layout
 
 ```xml
@@ -44,3 +46,66 @@ Add `PolygonGraphView` to your xml layout
 
 </android.support.constraint.ConstraintLayout>
 ```
+## Step 3:
+### Initialize your view
+Kotlin
+```kotlin
+val graph = findViewById(R.id.graph) as PolygonGraphView?
+```
+### Pass the `ValueHolder` list to the `PolygonGraphView`
+Kotlin
+```kotlin
+val values = listOf(
+                PolygonGraphView.ValueHolder(getString(R.string.str1), 0.8f, ContextCompat.getColor(context, R.color.color1)),
+                PolygonGraphView.ValueHolder(getString(R.string.str2), 0.9f, ContextCompat.getColor(context, R.color.color2)),
+		...
+           )
+
+        val adapter = object : PolygonGraphView.Adapter<PolygonGraphView.ValueHolder>() {
+
+            override fun getSize(): Int = values.size
+
+            override fun onCreateValueHolder(pos: Int): PolygonGraphView.ValueHolder = values[pos]
+        }
+        
+        graph?.setAdapter(adapter)
+```
+
+#### customize
+
+| Params  | Description |
+| ------------- | ------------- |
+| `app:fillColor`  | To set the fill color.  |
+| `app:axisColor`  | To change the color of axis.  |
+| `app:axisSize`  | To set the size of axis (thickness).  |
+| `app:dotSize`  | To set the size of dot.  |
+| `app:dotPadding`  | To set padding size of dot.  |
+| `app:labelSize`  | To set the color of label color.  |
+| `app:labelPadding`  | To set padding size of label.  |
+| `app:animDuration` | To set animation duration time in Milliseconds. |
+
+
+
+## License
+
+MIT License
+
+Copyright (c) 2017 Chong-OS
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
