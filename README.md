@@ -47,14 +47,15 @@ Add `PolygonGraphView` to your xml layout
 </android.support.constraint.ConstraintLayout>
 ```
 ### Step 3:
-#### Initialize your view
+Initialize your view
 ```kotlin
 val graph = findViewById(R.id.graph) as PolygonGraphView?
 ```
-#### Pass the `ValueHolder` list to the `PolygonGraphView`
+
+Pass the `ValueHolder` list to the `PolygonGraphView`
 ```kotlin
 val values = listOf(
-PolygonGraphView.ValueHolder(getString(R.string.str1), 0.8f, ContextCompat.getColor(context, R.color.color1)),
+		PolygonGraphView.ValueHolder(getString(R.string.str1), 0.8f, ContextCompat.getColor(context, R.color.color1)),
                 PolygonGraphView.ValueHolder("Label2", 0.9f, ContextCompat.getColor(context, R.color.color2)),
 		...
 	)
