@@ -58,7 +58,7 @@ val values = listOf(
 		PolygonGraphView.ValueHolder(getString(R.string.str1), 0.8f, ContextCompat.getColor(context, R.color.color1)),
                 PolygonGraphView.ValueHolder("Label2", 0.9f, ContextCompat.getColor(context, R.color.color2)),
 		...
-	)
+		)
 
 val adapter = object : PolygonGraphView.Adapter<PolygonGraphView.ValueHolder>() {
 
